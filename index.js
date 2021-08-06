@@ -4,5 +4,14 @@
 let inputBtn = document.getElementById("input-btn");
 
 inputBtn.addEventListener("click", function(){
-	console.log("Button clicked from event listener!");
-})
+	
+});
+
+let myLeads =[];
+
+let inputEl = document.getElementById("input-el");
+let result = document.querySelector("#result-el");
+
+inputEl.addEventListener("input", function(){
+	myLeads = result.textContent = this.value;
+});
