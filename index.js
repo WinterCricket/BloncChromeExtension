@@ -1,17 +1,14 @@
 
 
-
-let inputBtn = document.getElementById("input-btn");
+let myLeads =[];
+const inputEl = document.getElementById("input-el");
+const inputBtn = document.getElementById("input-btn");
 
 inputBtn.addEventListener("click", function(){
-	
+	myLeads.push("www.awesomelead.com");
+	console.log(myLeads);
 });
 
-let myLeads =[];
 
-let inputEl = document.getElementById("input-el");
-let result = document.querySelector("#result-el");
+//let result = document.querySelector("#result-el");
 
-inputEl.addEventListener("input", function(){
-	myLeads = result.textContent = this.value;
-});
