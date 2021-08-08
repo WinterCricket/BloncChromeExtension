@@ -2,45 +2,43 @@
 
 let myLeads =[];
 
-let inputEl = document.getElementById("input-el");
+const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 //et leadsEl = document.getElementById("leads-el");
 const ulEl = document.getElementById("ul-el");
 
 
 
-function renderLeads(){
-	ulEl.textContent = "Leads: " ;
-	for (let i = 0; i < myLeads.length; i++){
 
-		ulEl.innerHTML +=  "<li>"+myLeads[i] +"</li>";
-	}
-}
-
+	
 
 inputBtn.addEventListener("click", function(){
 	myLeads.push(inputEl.value);
-	console.log(myLeads);
-	renderLeads();
+	renderLeads()
 });
-	
 
 
-// const fruits = ["Banana", "Orange", "Apple", "Mango"];
-// let fLen = fruits.length;
+console.log(myLeads);
+function renderLeads(){
+let listItems = "";
 
-// let text = "<ul>";
-// for (let i = 0; i < fLen; i++) {
-//   text += "<li>" + fruits[i] + "</li>";
+
+for (let i = 0; i < myLeads.length; i++){
+
+		listItems +=  "<li>"+myLeads[i] +"</li>";
+		console.log(listItems)
+	}
+
+	ulEl.innerHTML = listItems
+	console.log(listItems)
+}
+
+// function renderLeads() {
+// for (let i = 0; i < myLeads.length; i++){
+
+// 		ulEl.innerHTML +=  "<li>"+myLeads[i] +"</li>";
+// 	}
+
 // }
-// text += "</ul>";
-
-// document.getElementById("demo").innerHTML = text;
 
 
-// function newCard(){
-	
-// 	cards.push(card);
-// } 
-
-	
