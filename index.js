@@ -10,14 +10,11 @@ const ulEl = document.getElementById("ul-el");
 
 
 
-	function ClearFields(){
-		document.getElementById('input-el').value = "";
-	}
 
 inputBtn.addEventListener("click", function(){
 	myLeads.push(inputEl.value);
 	renderLeads()
-	ClearFields()
+	inputEl.value = ""
 
 });
 
