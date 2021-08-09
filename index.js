@@ -26,7 +26,7 @@ let listItems = "";
 
 for (let i = 0; i < myLeads.length; i++){
 
-		listItems +=  "<li><a href ="+myLeads[i] +">"+myLeads[i]+"</a></li>";
+		listItems +=  "<li><a href ='"+myLeads[i] +"' target='blank'>"+myLeads[i]+"</a></li>";
 		console.log(listItems)
 	}
 
