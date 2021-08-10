@@ -1,13 +1,31 @@
 // chrome://extensions/
 let myLeads = []
+
+// myLeads = JSON.parse(myLeads)
+
+
+
+// myLeads = JSON.stringify(myLeads)
+
+
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 
+
+
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    inputEl.value = ""
+    inputEl.value = "" 
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+   	myLeads = leadsFromLocalStorage
     renderLeads()
+
+    
 })
 
 function renderLeads() {
@@ -23,3 +41,4 @@ function renderLeads() {
     }
     ulEl.innerHTML = listItems  
 }
+
