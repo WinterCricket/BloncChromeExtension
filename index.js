@@ -17,15 +17,15 @@ if (leadsFromLocalStorage) {
 // instead of the global myLeads variable. Update all invocations 
 // of the function as well.
 
-const tabs = [
-    {url: "https://www.youtube.com/watch?v=beC8NlF0H2w"}
-]
-
 
 tabBtn.addEventListener("click", function(){
+    chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    
     myLeads.push(tabs[0].url)
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     render(myLeads)
+    })
+
 })
 
 function render(leads) {
