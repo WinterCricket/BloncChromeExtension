@@ -1,27 +1,19 @@
-// chrome://extensions/
 let myLeads = []
-
-// myLeads = JSON.parse(myLeads)
-
-
-
-// myLeads = JSON.stringify(myLeads)
-
-
-
+let oldLeads =[]
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
-const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
 
-
-if(leadsFromLocalStorage){
-	myLeads = leadsFromLocalStorage
-	render(myLeads)
-
+if (leadsFromLocalStorage) {
+    myLeads = leadsFromLocalStorage
+    render(myLeads)
 }
 
+// Refactor function so it takes a parameter, leads, that it uses
+// instead of the global myLeads variable. Update all invocations 
+// of the function as well.
 
 function render(leads) {
     let listItems = ""
@@ -34,30 +26,18 @@ function render(leads) {
             </li>
         `
     }
-    ulEl.innerHTML = listItems  
+    ulEl.innerHTML = listItems
 }
 
-
-deleteBtn.addEventListener("click", function() {
-   
-   localStorage.clear()	
-   myLeads = []
-   render(myLeads)    
+deleteBtn.addEventListener("dblclick", function() {
+    localStorage.clear()
+    myLeads = []
+    render(myLeads)
 })
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    inputEl.value = "" 
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-   	
-
-   	
+    inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLeads) )
     render(myLeads)
-
-    
 })
-
-
-
-
-
