@@ -1,7 +1,9 @@
 let myLeads = []
+
 let oldLeads =[]
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
+const tabBtn = document.getElementById("tab-btn")
 const ulEl = document.getElementById("ul-el")
 const deleteBtn = document.getElementById("delete-btn")
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") )
@@ -14,6 +16,17 @@ if (leadsFromLocalStorage) {
 // Refactor function so it takes a parameter, leads, that it uses
 // instead of the global myLeads variable. Update all invocations 
 // of the function as well.
+
+const tabs = [
+    {url: "https://www.youtube.com/watch?v=beC8NlF0H2w"}
+]
+
+
+tabBtn.addEventListener("click", function(){
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    render(myLeads)
+})
 
 function render(leads) {
     let listItems = ""
