@@ -39,6 +39,8 @@ function render(leads) {
             </li>
         `
     }
+
+    //console.log(listItems)
     ulEl.innerHTML = listItems
 }
 
